@@ -25,8 +25,9 @@
 %   Propulsions Lead 2019-2021
 %   
 %   Last Editted by
-%   Ryan Dunn
-%   1/23/2020
+%   Kevin Vo
+%   Propulsions Lead 2021
+%   1/10/2021
 
 %% Variable Legend
 % -------------- Input Variables --------------
@@ -47,7 +48,7 @@
 % I0 = No-Load Current @ 10 Volts [Amps]
 % Rm = Motor Resistance [Ohms]
 
-% Propnames = name of propeller
+% Propnames = name of propeller ([propeller diameter, pitch])
 % diameter = propeller diameter [in]
 % pitch = propeller pitch [in]
 % maxRPM = maximum RPM of propeller
@@ -57,8 +58,8 @@
 % Ct = thrust coefficient (Ct=T/(rho * n**2 * D**4))
 % Cp = power coefficient (Cp=P/(rho * n**3 * D**5))
 % PWR = power [Hp]
-% Torque = torque [In-lbf]
-% Thrust = thrust [lbf]
+% Qprop = propeller torque [In-lbf]
+% T = thrust [lbf]
 
 %% Initialize
 clear all; close all; format longg; clc;
@@ -143,6 +144,7 @@ end
 fprintf('imported motors successfully\n');
 
 %clear FILE temp i PropFiles MotorFile insheet
+clear FILE temp i MotorFile insheet
 
 save('DataImport.mat')
 fprintf('done\n')
