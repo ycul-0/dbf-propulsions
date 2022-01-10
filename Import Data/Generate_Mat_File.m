@@ -110,7 +110,7 @@ for i=1:(size(insheet,1)-1)
 end
 fprintf('imported motors successfully\n');
 
-clear FILE temp i PropFiles MotorFile insheet
+%clear FILE temp i PropFiles MotorFile insheet
 
 save('DataImport.mat')
 fprintf('done\n')

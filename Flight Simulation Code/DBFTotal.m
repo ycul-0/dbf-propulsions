@@ -1,4 +1,37 @@
-%Inputs
+%% DBF Flight Simulation Code
+
+%---------------------------------------------------------------%
+%   UCSD DBF Propulsions Subteam 
+%   DBF Flight Simulation Code
+%   
+%   This script is used to simulate the conditions that the plane may
+%   experience during the flight given a certain inputs (mass of plane,
+%   lift coefficient (Cl), zero lift drag coefficient (cd0), power draw
+%   (k), angle of the motors (MotorAngle), the wing surface area
+%   (WingSurfaceArea), and distance of the course. This script will output
+%   the total flight time (t_total), velocity (v_straight) and drag (drag_straight)
+%   of plane during steady level flight and the velocity (v_banked) and drag (drag_banked) 
+%   of plane while making a banked turn (v_banked),
+% 
+%   This file requires DataImport.mat to be loaded in the workspace.
+%   
+%   First Created by 
+%   Ryan Dunn 
+%   Propulsions Lead 2019-2021
+%   
+%   Last Editted by
+%   Kevin Vo
+%   11/15/2021
+%   
+%---------------------------------------------------------------%
+%   
+%   ROOM FOR IMPROVEMENT: 
+%   
+%   
+%---------------------------------------------------------------%
+
+
+%Inputs 
 mass = 4.082; %kilograms
 Cl = 0.354;
 k = 0.067;
