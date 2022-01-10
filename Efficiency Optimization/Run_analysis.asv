@@ -1,8 +1,6 @@
 clear all; close all; clc;
 numProp = 2;
 numRuns = 30;
-
-% CruiseAirSpeed [Mph]
 M1s = 48.32;
 M2s = 70.69;
 M3s = 54.80;

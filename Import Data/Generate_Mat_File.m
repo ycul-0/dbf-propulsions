@@ -28,6 +28,38 @@
 %   Ryan Dunn
 %   1/23/2020
 
+%% Variable Legend
+% -------------- Input Variables --------------
+
+% MotorFile = An input variable containing the imported Motor excel sheet, 
+% which contains: NAME, Kv, Rm, and I_0 of various motors.
+
+% PropFiles = An input variable containing all the imported Propeller Data
+% sheets. Each propeller data sheet contains V, J, Pe, Ct, PWR, Torque, 
+% and Thrust of each propeller type.
+
+% -------------- Output Variables in DataImport.mat --------------
+
+% Motornames = contains the names of 
+% Kv = ratio of the motor's unloaded rpm to the peak voltage on the wires
+% connected  to the coils [RPM/Volt] This rating is helpful to determine
+% how fast a motor will rotate when a given voltage is applied to it.
+% I0 = No-Load Current @ 10 Volts [Amps]
+% Rm = Motor Resistance [Ohms]
+
+% Propnames = name of propeller
+% diameter = propeller diameter [in]
+% pitch = propeller pitch [in]
+% maxRPM = maximum RPM of propeller
+% V = model speed [mph]
+% J = advance ratio (J=V/nD)
+% Pe = propeller efficiency
+% Ct = thrust coefficient (Ct=T/(rho * n**2 * D**4))
+% Cp = power coefficient (Cp=P/(rho * n**3 * D**5))
+% PWR = power [Hp]
+% Torque = torque [In-lbf]
+% Thrust = thrust [lbf]
+
 %% Initialize
 clear all; close all; format longg; clc;
 %% Input Sheets
