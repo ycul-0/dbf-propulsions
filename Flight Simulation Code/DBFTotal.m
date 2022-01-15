@@ -5,14 +5,24 @@
 %   DBF Flight Simulation Code
 %   
 %   This script is used to simulate the conditions that the plane may
-%   experience during the flight given a certain inputs (mass of plane,
-%   lift coefficient (Cl), zero lift drag coefficient (cd0), power draw
-%   (k), angle of the motors (MotorAngle), the wing surface area
-%   (WingSurfaceArea), and distance of the course. This script will output
-%   the total flight time (t_total), velocity (v_straight) and drag (drag_straight)
-%   of plane during steady level flight and the velocity (v_banked) and drag (drag_banked) 
-%   of plane while making a banked turn (v_banked),
-% 
+%   experience during the flight given a certain inputs: 
+%       Dataimport.mat
+%       mass = mass of plane [kg]
+%       Cl = lift coefficient 
+%       k = power draw 
+%       cd0 = zero lift drag coefficient
+%       MotorAngles = angle of the motors
+%       WingSurfaceArea = surface area of wing
+%       dist = distance of course [ft]
+%
+%   This script calls upon the scripts DBFSteadyFlight.m and DBFBankTurn.m
+%   to calculate and output:
+%       t_total = total flight time [seconds]
+%       v_straight = velocity of plane during steady level flight [mph]
+%       drag_straight = drag of plane during steady level flight [mph]
+%       v_banked = velocity of plane while making a banked turn [lbf]
+%       drag_banked = drag of plane while making a banked turn [lbf]
+%
 %   This file requires DataImport.mat to be loaded in the workspace.
 %   
 %   First Created by 
@@ -21,7 +31,7 @@
 %   
 %   Last Editted by
 %   Kevin Vo
-%   11/15/2021
+%   11/15/2022
 %   
 %---------------------------------------------------------------%
 %   
@@ -30,8 +40,7 @@
 %   
 %---------------------------------------------------------------%
 
-
-%Inputs 
+%% Inputs 
 mass = 4.082; %kilograms
 Cl = 0.354;
 k = 0.067;
@@ -40,6 +49,8 @@ MotorAngle = 0; %degrees
 WingSurfaceArea = .41032176; %m^3
 n = 2.5; %g's
 dist = 1000; %feet
+
+%% Calculations
 
 %Straight
 d_straight = dist*0.3048; %feet to meters
@@ -63,7 +74,7 @@ t_total = 3*(2*t_180 + 2*t_straight + t_360); %seconds
 drag_straight = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_straight;
 drag_banked = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_turn;
 
-%Outputs in useful units
+%% Outputs in useful units
 t_total
 v_straight = v_straight * 2.23694 %m/s to mph
 v_banked = v_turn * 2.23694 %m/s to mph
