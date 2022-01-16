@@ -9,10 +9,11 @@
 %       Dataimport.mat
 %       mass = mass of plane [kg]
 %       Cl = lift coefficient 
-%       k = power draw 
+%       k = power draw [A]
 %       cd0 = zero lift drag coefficient
+%       n = g's
 %       MotorAngles = angle of the motors
-%       WingSurfaceArea = surface area of wing
+%       WingSurfaceArea = surface area of wing [m^2]
 %       dist = distance of course [ft]
 %
 %   This script calls upon the scripts DBFSteadyFlight.m and DBFBankTurn.m
@@ -23,7 +24,8 @@
 %       v_banked = velocity of plane while making a banked turn [lbf]
 %       drag_banked = drag of plane while making a banked turn [lbf]
 %
-%   This file requires DataImport.mat to be loaded in the workspace.
+%   This file requires DataImport.mat to be loaded in the workspace. Please
+%   run Generate_Mat_File.m first before running this script. 
 %   
 %   First Created by 
 %   Ryan Dunn 
@@ -41,12 +43,13 @@
 %---------------------------------------------------------------%
 
 %% Inputs 
-mass = 4.082; %kilograms
-Cl = 0.354;
-k = 0.067;
-Cd0 = 0.032;
+
+mass = 5.8967; %kilograms
+Cl = 0.28;
+k = 0.067; % this one is unknown
+Cd0 = 0.012;
 MotorAngle = 0; %degrees
-WingSurfaceArea = .41032176; %m^3
+WingSurfaceArea = 0.32980579; %m^2
 n = 2.5; %g's
 dist = 1000; %feet
 
