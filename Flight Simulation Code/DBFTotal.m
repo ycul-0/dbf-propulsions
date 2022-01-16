@@ -11,7 +11,8 @@
 %       Cl = lift coefficient 
 %       k = power draw [A]
 %       cd0 = zero lift drag coefficient
-%       n = g's
+%       n = load factor, Lift/Weight ratio of plane. Measures amount of
+%       physical stress it is under [g's]
 %       MotorAngles = angle of the motors
 %       WingSurfaceArea = surface area of wing [m^2]
 %       dist = distance of course [ft]
@@ -39,6 +40,7 @@
 %   
 %   ROOM FOR IMPROVEMENT: 
 %   
+%   Add a script that automatically calculates the power draw. 
 %   
 %---------------------------------------------------------------%
 
