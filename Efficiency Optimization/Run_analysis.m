@@ -1,9 +1,15 @@
 clear all; close all; clc;
 numProp = 2;
 numRuns = 30;
-M1s = 48.32;
-M2s = 70.69;
-M3s = 54.80;
+
+M1s = 53.18; %mph
+M2s = 68.18;
+M3s = 68.18;
+
+% mph
+% M1s = 48.32;
+% M2s = 70.69;
+% M3s = 54.80;
 
 % Mission Drag Estimates (lbsf)
 D1 = linspace(1.45,2.45,numRuns)/numProp; % 1.95 lbsf

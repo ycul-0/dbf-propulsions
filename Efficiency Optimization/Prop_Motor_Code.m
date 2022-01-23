@@ -7,8 +7,8 @@
 %   Propulsions Lead 2019-2021
 %   
 %   Last Editted by
-%   Ryan Dunn
-%   1/15/21
+%   Kevin Vo
+%   1/22/22.
 %   
 %---------------------------------------------------------------%
 %% Initialize
@@ -18,7 +18,7 @@ clear all; close all; format longg; clc;
 outfile = 'Results.xlsx';
 
 numProps = 2;   % Number of Propellers
-Voltage = 22.2; % Voltage of Battery *NOTE* Voltage does change throughout
+Voltage = 29.6; % Voltage of Battery *NOTE* Voltage does change throughout
                 % the flight, but the labeled volate is a fair average.
 
 % MISSION REQUIREMENTS
@@ -27,9 +27,9 @@ Voltage = 22.2; % Voltage of Battery *NOTE* Voltage does change throughout
 % Assuming steady level flight: Thrust = Drag
 % [Thrust CruiseAirspeed]
 % [lbsf MPH]
-Mreq{1} = [1.1/numProps 48.32];
-Mreq{2} = [1.9/numProps 70.69];
-Mreq{3} = [1.3/numProps 54.80];
+Mreq{1} = [1.1/numProps 53.18];
+Mreq{2} = [1.9/numProps 68.18];
+Mreq{3} = [1.3/numProps 68.18];
 
 % Import Propeller & Motor Datasheets
 load('DataImport.mat')
