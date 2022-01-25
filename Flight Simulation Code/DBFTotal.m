@@ -15,7 +15,7 @@
 %       physical stress it is under [g's]
 %       MotorAngles = angle of the motors
 %       WingSurfaceArea = surface area of wing [m^2]
-%       dist = distance of course [ft]
+%       dist = distance of a single straight part of the course [ft]
 %
 %   This script calls upon the scripts DBFSteadyFlight.m and DBFBankTurn.m
 %   to calculate and output:
@@ -48,12 +48,13 @@
 
 mass = 5.8967; %kilograms
 Cl = 0.28;
-k = 0.067; % this one is unknown
+k = 11; % Amps
 Cd0 = 0.012;
 MotorAngle = 0; %degrees
 WingSurfaceArea = 0.32980579; %m^2
 n = 2.5; %g's
 dist = 1000; %feet
+
 
 %% Calculations
 
