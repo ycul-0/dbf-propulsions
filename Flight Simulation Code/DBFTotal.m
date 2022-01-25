@@ -50,7 +50,8 @@
 %   
 %   ROOM FOR IMPROVEMENT: 
 %   
-%  
+%   Add some more battery parameters into input to calculate battery
+%   related values.
 %   
 %---------------------------------------------------------------%
 
@@ -89,7 +90,7 @@ t_total = 3*(2*t_180 + 2*t_straight + t_360); %seconds
 drag_straight = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_straight;
 drag_banked = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_turn;
 
-%% Outputs in useful units
+%% Converting Outputs into useful units
 t_total
 v_straight = v_straight * 2.23694 %m/s to mph
 v_banked = v_turn * 2.23694 %m/s to mph
