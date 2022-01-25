@@ -39,11 +39,11 @@ clc;
 %% Input Parameters
 
 % MISSION 1 [2021 Setup]
-% cp  = 18;
-% cm = 11;
-% Ampdraw = 16.55;
-% RPMcruise = 8000;
-% speed = 48.32;
+cp  = 28;
+cm = -0.061;
+Ampdraw = 12.7134;
+RPMcruise = 7000;
+speed = 53.18;
 
 % MISSION 2 [2021 Setup]
 % cp  = 28;
@@ -53,11 +53,11 @@ clc;
 % speed = 70.69;
 
 % MISSION 3 [2021 Setup]
-cp  = 20;
-cm = 11;
-Ampdraw = 10.67;
-RPMcruise = 8000;
-speed = 54.80;
+% cp  = 20;
+% cm = 11;
+% Ampdraw = 10.67;
+% RPMcruise = 8000;
+% speed = 54.80;
 
 % Rated Battery Voltage (will vary throughout the flight, but assumed constant)
 Voltage = 22.2;

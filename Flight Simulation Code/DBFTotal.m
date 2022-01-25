@@ -4,13 +4,22 @@
 %   UCSD DBF Propulsions Subteam 
 %   DBF Flight Simulation Code
 %   
+%   Summary: A MATLAB mission model that uses equillibrium analysis to 
+%   determine the speeds at which the aircraft must fly during the 1000 ft
+%   long straight paths of the course and the banked-angle turns. From
+%   user inputs of mass and maximum load factor values, the code produces
+%   velocity estimates that the plane endures in steady-level flight on the
+%   1000 ft long part of the course and when performing a banked turn. From
+%   these values, the total mission time and other relevant quantities are
+%   calculated. 
+%
 %   This script is used to simulate the conditions that the plane may
 %   experience during the flight given a certain inputs: 
 %       Dataimport.mat
 %       mass = mass of plane [kg]
-%       Cl = lift coefficient 
+%       Cl = lift coefficient [unitless]
 %       k = power draw [A]
-%       cd0 = zero lift drag coefficient
+%       cd0 = zero lift drag coefficient [unitless]
 %       n = load factor, Lift/Weight ratio of plane. Measures amount of
 %       physical stress it is under [g's]
 %       MotorAngles = angle of the motors
@@ -19,7 +28,7 @@
 %
 %   This script calls upon the scripts DBFSteadyFlight.m and DBFBankTurn.m
 %   to calculate and output:
-%       t_total = total flight time [seconds]
+%       t_total = total mission time [seconds]
 %       v_straight = velocity of plane during steady level flight [mph]
 %       drag_straight = drag of plane during steady level flight [mph]
 %       v_banked = velocity of plane while making a banked turn [lbf]
@@ -34,13 +43,14 @@
 %   
 %   Last Editted by
 %   Kevin Vo
-%   11/15/2022
+%   Propulsions Lead 2021-Present
+%   11/25/2022
 %   
 %---------------------------------------------------------------%
 %   
 %   ROOM FOR IMPROVEMENT: 
 %   
-%   Add a script that automatically calculates the power draw. 
+%  
 %   
 %---------------------------------------------------------------%
 
@@ -48,13 +58,12 @@
 
 mass = 5.8967; %kilograms
 Cl = 0.28;
-k = 11; % Amps
+k = 12.7134; % Amps
 Cd0 = 0.012;
 MotorAngle = 0; %degrees
 WingSurfaceArea = 0.32980579; %m^2
 n = 2.5; %g's
 dist = 1000; %feet
-
 
 %% Calculations
 
