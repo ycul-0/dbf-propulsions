@@ -28,7 +28,7 @@ Voltage = 22.6; % Voltage of Battery *NOTE* Voltage does change throughout
 % [Thrust CruiseAirspeed]
 % [lbsf MPH]
 Mreq{1} = [1.1/numProps 53.18];
-Mreq{2} = [1.9/numProps 68.18];
+Mreq{2} = [1.9/numProps 65.6];
 Mreq{3} = [1.3/numProps 68.18];
 
 % Import Propeller & Motor Datasheets
