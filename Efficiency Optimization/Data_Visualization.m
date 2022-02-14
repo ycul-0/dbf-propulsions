@@ -106,7 +106,7 @@ speed = 53.18;
 % MISSION 2 [2022 Setup]
 % cp  = 20;
 % cm = 11;
-% Ampdraw = 13.988;
+% Ampdraw = 11.0966;
 % RPMcruise = 9000;
 % speed = 65.6;
 

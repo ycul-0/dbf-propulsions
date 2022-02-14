@@ -25,11 +25,11 @@ Voltage = 22.2; % Voltage of Battery *NOTE* Voltage does change throughout
 % Based on values acquired from Aero Team: 
 % Drag & Cruising speed
 % Assuming steady level flight: Thrust = Drag
-% [Thrust CruiseAirspeed]
+% [Thrust/numProps CruiseAirspeed]
 % [lbsf MPH]
-Mreq{1} = [1.1/numProps 53.18];
-Mreq{2} = [1.9/numProps 65.6];
-Mreq{3} = [1.3/numProps 68.18];
+Mreq{1} = [0.9044/numProps 53.18];
+Mreq{2} = [1.4238/numProps 68.18];
+Mreq{3} = [1.4238/numProps 68.18];
 
 % Import Propeller & Motor Datasheets
 load('DataImport.mat')
