@@ -16,8 +16,9 @@
 %   Propulsions Lead 2019-2021
 %   
 %   Last Editted by
-%   Ryan Dunn
-%   1/24/2021
+%   Kevin Vo
+%   Propulsions Lead 2021-2022
+%   2/13/2022
 %   
 %---------------------------------------------------------------%
 %   
@@ -31,6 +32,63 @@
 %   Power Required Graph
 %   
 %---------------------------------------------------------------%
+
+%% Variable Legend
+% ----------- Input Variables (From Generate_Mat_File.m) -----------
+
+% Motornames = contains the names of 
+% Kv = ratio of the motor's unloaded rpm to the peak voltage on the wires
+% connected  to the coils [RPM/Volt] This rating is helpful to determine
+% how fast a motor will rotate when a given voltage is applied to it.
+% I0 = No-Load Current @ 10 Volts: The no-load current is the current 
+% required just to turn the motor shaft with nothing connected. [Amps]
+% Rm = Motor Resistance [Ohms]
+
+% Propnames = name of propeller ([propeller diameter, pitch])
+% diameter = propeller diameter [in]
+% pitch = propeller pitch [in]
+% maxRPM = maximum RPM of propeller
+% V = model speed [mph]
+% J = advance ratio (J=V/nD)
+% Pe = propeller efficiency
+% Ct = thrust coefficient (Ct=T/(rho * n**2 * D**4))
+% Cp = power coefficient (Cp=P/(rho * n**3 * D**5))
+% PWR = power [Hp]
+% Qprop = propeller torque [In-lbf]
+% T = thrust [lbf]
+
+% ----------- User-Inputted Variables For Each Mission -----------
+% cp = Propeller index (Propnames{cp}) Go to Propnames cell array and find
+% the propeller that you want to analyze. Once you find the name of the
+% propeller you are looking for, input for cp the index value of where that
+% propeller name is located. Ex) cp will be 20 if we want to analyze an
+% 11x7E propeller.
+
+% cm = Motor index (Motornames{cm}) Go to Motornames cell array and find
+% the motor that you want to test out. Once you find the name of the
+% motor you are looking for, input for cp the index value of where that
+% motor name is located. Ex) cp will be 11 if we want to analyze an
+% 420Kv Scorpion SII-4025 motor. 
+
+% (Inputs Obtained From Prop_Motor_Code.m)
+% Ampdraw = Current Draw [Amps]
+% RPMcruise = RPM of prop-motor configuration at cruise speed 
+% Speed = Cruise Air Speed [mph] (obtained from aero team)
+% Voltage = Voltage of the Battery Used [Volts]
+
+% ----------- Output Graphs and Variables  -----------
+
+% Figure 1: Static Thrust Capabilities for [Propeller Name] on [Motor Name] (Thrust vs. Amperage Draw)
+% Figure 2: Motor Efficiency Surface Plot for [Motor Name] (Efficiency vs. Amps vs. RPM)
+% Figure 3: Motor Efficiency Contour Plot for [Motor Name] (Amps vs. RPM)
+% Figure 4: Propeller Efficiency Curve for [Propeller Name] (RPM vs. Thrust vs. Airspeed)
+% Figure 5: [Motor Name] RPM Efficiency Curves (Efficiency vs. Airspeed) 
+% FIgure 6: Efficiency Comparison of Propeller & Motor @ Cruising Speed (Efficiency vs. RPM)
+
+% Static Thrust [lbsf]: amount of thrust produced by a propeller that is
+% located stationary to the earth.
+% Static AmpDraw [Amps]: 
+
 %% Initialize
 clear all; 
 % close all; 
@@ -38,26 +96,26 @@ format longg;
 clc;
 %% Input Parameters
 
-% MISSION 1 [2021 Setup]
-cp  = 28;
-cm = -0.061;
+% MISSION 1 [2022 Setup]
+cp  = 20;
+cm = 11;
 Ampdraw = 12.7134;
 RPMcruise = 7000;
 speed = 53.18;
 
-% MISSION 2 [2021 Setup]
-% cp  = 28;
-% cm = 11;
-% Ampdraw = 21.7;
-% RPMcruise = 8000;
-% speed = 70.69;
-
-% MISSION 3 [2021 Setup]
+% MISSION 2 [2022 Setup]
 % cp  = 20;
 % cm = 11;
-% Ampdraw = 10.67;
-% RPMcruise = 8000;
-% speed = 54.80;
+% Ampdraw = 13.988;
+% RPMcruise = 9000;
+% speed = 65.6;
+
+% MISSION 3 [2022 Setup]
+% cp  = 20;
+% cm = 11;
+% Ampdraw = 11.0966;
+% RPMcruise = 9000;
+% speed = 68.18;
 
 % Rated Battery Voltage (will vary throughout the flight, but assumed constant)
 Voltage = 22.2;

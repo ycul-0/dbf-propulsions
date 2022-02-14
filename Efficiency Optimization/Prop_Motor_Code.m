@@ -18,7 +18,7 @@ clear all; close all; format longg; clc;
 outfile = 'Results.xlsx';
 
 numProps = 2;   % Number of Propellers
-Voltage = 22.6; % Voltage of Battery *NOTE* Voltage does change throughout
+Voltage = 22.2; % Voltage of Battery *NOTE* Voltage does change throughout
                 % the flight, but the labeled volate is a fair average.
 
 % MISSION REQUIREMENTS

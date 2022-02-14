@@ -41,11 +41,12 @@
 
 % -------------- Output Variables in DataImport.mat --------------
 
-% Motornames = contains the names of 
+% Motornames = contains the names of motors
 % Kv = ratio of the motor's unloaded rpm to the peak voltage on the wires
 % connected  to the coils [RPM/Volt] This rating is helpful to determine
 % how fast a motor will rotate when a given voltage is applied to it.
-% I0 = No-Load Current @ 10 Volts [Amps]
+% I0 = No-Load Current @ 10 Volts: The no-load current is the current 
+% required just to turn the motor shaft with nothing connected. [Amps]
 % Rm = Motor Resistance [Ohms]
 
 % Propnames = name of propeller ([propeller diameter, pitch])
