@@ -18,7 +18,7 @@
 %   Last Editted by
 %   Kevin Vo
 %   Propulsions Lead 2021-2022
-%   2/13/2022
+%   2/14/2022
 %   
 %---------------------------------------------------------------%
 %   
@@ -87,7 +87,8 @@
 
 % Static Thrust [lbsf]: amount of thrust produced by a propeller that is
 % located stationary to the earth.
-% Static AmpDraw [Amps]: 
+% Static AmpDraw [Amps]: amount of current pulled by motors while the plane
+% is stationary to the earth
 
 %% Initialize
 clear all; 
@@ -97,8 +98,8 @@ clc;
 %% Input Parameters
 
 % MISSION 1 [2022 Setup]
-cp  = 20;
-cm = 11;
+cp  = 20; % choose propeller name for analysis (from Propnames)
+cm = 11; % choose motor name for analysis (from Motornames)
 Ampdraw = 12.7134;
 RPMcruise = 7000;
 speed = 53.18;
