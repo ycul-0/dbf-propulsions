@@ -59,9 +59,10 @@
 
 mass = 5.8967; %kilograms
 Cl = 0.28;
-k = 12.7134; % Amps
+k = 0.0381; % Amps
 Cd0 = 0.012;
 MotorAngle = 0; %degrees
+ClimbAngle = 10;
 WingSurfaceArea = 0.32980579; %m^2
 n = 2.5; %g's
 dist = 1000; %feet
@@ -85,6 +86,8 @@ t_360 = d_360/TurnRate;
 %Total time
 t_total = 3*(2*t_180 + 2*t_straight + t_360); %seconds
 
+% Steady CLimb
+v_steady_climb = DBFSteadyClimb(mass,k,Cl,Cd0,ClimbAngle,MotorAngle,WingSurfaceArea);
 
 %Drag calculation
 drag_straight = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_straight;
@@ -94,6 +97,7 @@ drag_banked = 0.5 * 1.225 * (Cd0 + k*Cl^2) *WingSurfaceArea * v_turn;
 t_total
 v_straight = v_straight * 2.23694 %m/s to mph
 v_banked = v_turn * 2.23694 %m/s to mph
+v_steady_climb = v_steady_climb * 2.23694 % m/s to mph
 drag_straight = drag_straight * 0.224809 %N to lbf
 drag_banked = drag_banked * 0.224809 %N to lbf
 
